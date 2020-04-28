@@ -52,6 +52,9 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 
+# Pre-Rendering
+ro.vendor.perf.scroll_opt=true
+
 # SdCardFS
 persist.sys.fuse.passthrough.enable=true
 
