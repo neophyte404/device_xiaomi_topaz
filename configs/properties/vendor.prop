@@ -216,6 +216,9 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # Fingerprint
 ro.hardware.fp.sideCap=true
 
+# FUSE
+persist.sys.fuse.passthrough.enable=true
+
 # Graphics
 graphics.gpu.profiler.support=true
 ro.hardware.egl=adreno
