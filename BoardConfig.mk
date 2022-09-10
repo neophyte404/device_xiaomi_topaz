@@ -87,6 +87,8 @@ BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
+# HWUI
+USE_OPENGL_RENDERER := true
 HWUI_COMPILE_FOR_PERF := true
 
 # Init
