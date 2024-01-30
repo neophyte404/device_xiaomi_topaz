@@ -57,7 +57,7 @@ public final class ThermalUtils {
 
     private SharedPreferences mSharedPrefs;
 
-    protected ThermalUtils(Context context) {
+    public ThermalUtils(Context context) {
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
@@ -68,18 +68,18 @@ public final class ThermalUtils {
             setDefaultThermalProfile();
     }
 
-    protected static void startService(Context context) {
+    public static void startService(Context context) {
         context.startServiceAsUser(new Intent(context, ThermalService.class),
                 UserHandle.CURRENT);
         PreferenceManager.getDefaultSharedPreferences(context).edit().putString(THERMAL_SERVICE, "true").apply();
     }
 
-    protected static void stopService(Context context) {
+    public static void stopService(Context context) {
         context.stopService(new Intent(context, ThermalService.class));
         PreferenceManager.getDefaultSharedPreferences(context).edit().putString(THERMAL_SERVICE, "false").apply();
     }
 
-    protected static boolean isServiceEnabled(Context context) {
+    public static boolean isServiceEnabled(Context context) {
         return true;
     }
 
@@ -98,7 +98,7 @@ public final class ThermalUtils {
         return value;
     }
 
-    protected void writePackage(String packageName, int mode) {
+    public void writePackage(String packageName, int mode) {
         String value = getValue();
         value = value.replace(packageName + ",", "");
         String[] modes = value.split(":");
@@ -131,7 +131,7 @@ public final class ThermalUtils {
         writeValue(finalString);
     }
 
-    protected int getStateForPackage(String packageName) {
+    public int getStateForPackage(String packageName) {
         String value = getValue();
         String[] modes = value.split(":");
         int state = STATE_DEFAULT;
@@ -152,11 +152,11 @@ public final class ThermalUtils {
         return state;
     }
 
-    protected static void setDefaultThermalProfile() {
+    public static void setDefaultThermalProfile() {
         FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
     }
 
-    protected void setThermalProfile(String packageName) {
+    public void setThermalProfile(String packageName) {
         String value = getValue();
         String modes[];
         String state = THERMAL_STATE_DEFAULT;
