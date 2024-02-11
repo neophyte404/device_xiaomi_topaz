@@ -58,27 +58,31 @@ void property_override(string prop, string value)
 }
 
 void load_redmi_topaz() {
-    property_override("bluetooth.device.default_name", "Redmi Note 12");
     property_override("ro.product.brand", "Redmi");
     property_override("ro.product.device", "topaz");
     property_override("ro.product.manufacturer", "Xiaomi");
-    property_override("ro.product.marketname", "Redmi Note 12");
+    property_override("ro.product.marketname", "Redmi Note 12 4G NFC");
     property_override("ro.product.model", "23021RAA2Y");
     property_override("ro.product.mod_device", "topaz_global");
-    property_override("ro.product.name", "topaz_global");
-    property_override("vendor.usb.product_string", "Redmi Note 12");
+    property_override("ro.product.name", "topaz");
+    property_override("ro.bootimage.build.fingerprint", "Redmi/topaz_global/topaz:13/TKQ1.221114.001/V14.0.8.0.TMGMIXM:user/release-keys");
+    property_override("ro.build.description", "topaz_global-user 13 TKQ1.221114.001 V14.0.8.0.TMGMIXM release-keys");
+    property_override("ro.build.fingerprint", "Redmi/topaz_global/topaz:13/TKQ1.221114.001/V14.0.8.0.TMGMIXM:user/release-keys");
+    property_override("ro.vendor.build.fingerprint", "Redmi/topaz_global/topaz:13/TKQ1.221114.001/V14.0.8.0.TMGMIXM:user/release-keys");
 }
 
 void load_redmi_tapas() {
-    property_override("bluetooth.device.default_name", "Redmi Note 12");
     property_override("ro.product.brand", "Redmi");
     property_override("ro.product.device", "tapas");
     property_override("ro.product.manufacturer", "Xiaomi");
-    property_override("ro.product.marketname", "Redmi Note 12");
+    property_override("ro.product.marketname", "Redmi Note 12 4G");
     property_override("ro.product.model", "23021RAAEG");
     property_override("ro.product.mod_device", "tapas_global");
-    property_override("ro.product.name", "tapas_global");
-    property_override("vendor.usb.product_string", "Redmi Note 12");
+    property_override("ro.product.name", "tapas");
+    property_override("ro.bootimage.build.fingerprint", "Redmi/tapas_global/tapas:13/TKQ1.221114.001/V14.0.14.0.TMTMIXM:user/release-keys");
+    property_override("ro.build.description", "tapas_global-user 13 TKQ1.221114.001 V14.0.14.0.TMTMIXM release-keys");
+    property_override("ro.build.fingerprint", "Redmi/tapas_global/tapas:13/TKQ1.221114.001/V14.0.14.0.TMTMIXM:user/release-keys");
+    property_override("ro.vendor.build.fingerprint", "Redmi/tapas_global/tapas:13/TKQ1.221114.001/V14.0.14.0.TMTMIXM:user/release-keys");
 }
 
 void vendor_load_properties() {
@@ -98,6 +102,10 @@ void vendor_load_properties() {
 
     // Set hardware revision
     property_override("ro.boot.hardware.revision", GetProperty("ro.boot.hwversion", "").c_str());
+
+    // Set BT and USB configs
+    property_override("bluetooth.device.default_name", "Redmi Note 12");
+    property_override("vendor.usb.product_string", "Redmi Note 12");
 
     // Set dalvik heap configuration
     std::string heapstartsize, heapgrowthlimit, heapsize, heapminfree,
