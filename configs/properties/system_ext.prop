@@ -11,5 +11,4 @@ persist.sys.gps.fence=true
 vendor.media.target_variant=_khaje_v0
 
 # Radio
-ro.telephony.sim_slots.count=2
 telephony.active_modems.max_count=2
