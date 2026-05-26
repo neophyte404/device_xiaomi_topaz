@@ -8,4 +8,7 @@
      <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
           vibrator is capable of subtle vibrations -->
      <bool name="config_vibrateOnIconAnimation">true</bool>
+
+     <!-- Padding around the status bar -->
+    <dimen name="rounded_corner_content_padding">50px</dimen>
 </resources>
