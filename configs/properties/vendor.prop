@@ -147,23 +147,16 @@ persist.vendor.dpm.vndr.idletimer.mode=default
 drm.service.enabled=true
 
 # Display
-debug.egl.hw=0
-debug.mdpcomp.logs=0
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_hwc_vds=0
 debug.sf.disable_client_composition_cache=1
-debug.sf.high_fps_early_gl_phase_offset_ns=-5000000
-debug.sf.high_fps_early_phase_offset_ns=-5000000
-debug.sf.high_fps_late_app_phase_offset_ns=1000000
-debug.sf.high_fps_late_sf_phase_offset_ns=-5000000
-debug.sf.hw=0
 debug.sf.latch_unsignaled=1
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 persist.sys.sf.color_mode=1
 persist.sys.sf.color_saturation=1.1
 persist.sys.sf.native_mode=2
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=false
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
@@ -189,7 +182,7 @@ vendor.display.enable_camera_smooth=1
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.enable_posted_start_dyn=1
-vendor.display.idle_time=0
+vendor.display.idle_time=80
 vendor.display.normal_noc_efficiency_factor=0.85
 vendor.display.secure_preview_buffer_format=420_sp
 vendor.display.use_smooth_motion=1
@@ -226,6 +219,7 @@ ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
 debug.sf.enable_gl_backpressure=0
+debug.sf.enable_egl_image_tracker=0
 
 # Keystore
 ro.hardware.keystore_desede=true
