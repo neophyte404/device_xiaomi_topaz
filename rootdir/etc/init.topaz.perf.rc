@@ -6,12 +6,12 @@ on property:sys.boot_completed=1
     copy_per_line /dev/cpuctl/tasks /dev/cpuctl/system/tasks
 
 on property:vendor.post_boot.parsed=1
-    # cpuset parameters
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/foreground/boost/cpus 4-7
+    # Setup cpusets
     write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-3,5-7
+    write /dev/cpuset/background/cpus 2-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
 
     # configure input boost settings
     write /proc/sys/walt/input_boost/input_boost_ms 120
@@ -50,5 +50,6 @@ on property:vendor.post_boot.parsed=1
     write /proc/irq/253/smp_affinity_list 2
 
 on property:persist.sys.device_provisioned=1
-    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
+    # Use foreground cpuset for dex2oat
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,5,6,7
     setprop dalvik.vm.dex2oat-threads 6
