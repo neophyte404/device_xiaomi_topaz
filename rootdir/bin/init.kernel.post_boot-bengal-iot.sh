@@ -86,9 +86,9 @@ function configure_read_ahead_kb_values() {
     # /sys/block/dm-0/queue/read_ahead_kb to /sys/block/dm-10/queue/read_ahead_kb
     # /sys/block/sda/queue/read_ahead_kb to /sys/block/sdh/queue/read_ahead_kb
 
-    # Set 128 for All targets
+    # Set 256 for All targets
 
-    ra_kb=128
+    ra_kb=256
 
     if [ -f /sys/block/mmcblk0/bdi/read_ahead_kb ]; then
         echo $ra_kb > /sys/block/mmcblk0/bdi/read_ahead_kb
