@@ -338,5 +338,9 @@ case "$console_config" in
 	;;
 esac
 
+#Uclamp tuning
+sysctl -w kernel.sched_util_clamp_min_rt_default=96
+sysctl -w kernel.sched_util_clamp_min=128
+
 # Post-setup services
 setprop vendor.post_boot.parsed 1
