@@ -15,7 +15,7 @@ $(call inherit-product, device/xiaomi/topaz/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Gapps Core
-WITH_GAPPS := true
+WITH_GMS := true
 
 # Device identifier
 PRODUCT_NAME := lineage_topaz
