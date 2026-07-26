@@ -7,9 +7,6 @@ export BUILD_HOSTNAME=neophyte-build
 # MiuiCamera
 git clone --depth=1 https://github.com/neophyte404/vendor_xiaomi_miuicamera vendor/xiaomi/miuicamera
 
-# Dont include OMX service
-export TARGET_SUPPORTS_OMX_SERVICE=false
-
 # Auto-apply framework patch for fix battery usage
 
 apply_topaz_patches() {
