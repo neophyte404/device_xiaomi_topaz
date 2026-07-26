@@ -1489,7 +1489,9 @@ system_ext/app/QtiTelephony/QtiTelephony.apk|e39418c08672181741835c03bea3009ead2
 
 # Seccomp
 vendor/etc/seccomp_policy/atfwd@2.0.policy
+vendor/etc/seccomp_policy/c2audio.vendor.base-arm.policy
 vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
+vendor/etc/seccomp_policy/c2audio.vendor.ext-arm.policy
 vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
